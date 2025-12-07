@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    container_name: fastapi-app
+    ports:
+      - "5000:5000"
+    networks:
+      - airflow_default
+    restart: unless-stopped
+
+networks:
+  airflow_default:
+    external: true
